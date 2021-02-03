@@ -1,0 +1,17 @@
+{
+  "name": "serverless-boilerplate-monorepo-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "new-service": "serverless create --template aws-nodejs"
+  },
+  "keywords": [],
+  "author": "Andrei Nicolae",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless": "^2.22.0",
+    "serverless-bundle": "^4.2.0"
+  },
+  "dependencies": {}
+}
