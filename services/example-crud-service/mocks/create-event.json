@@ -1,0 +1,8 @@
+{
+  "body": "{\"question\":\"How do I enable 5G on Samsung phone?\"}",
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-ANDREI-4"
+    }
+  }
+}

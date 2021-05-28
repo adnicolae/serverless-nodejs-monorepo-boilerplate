@@ -1,0 +1,41 @@
+# TODO: Update this with your service name
+service: example-crud-service
+
+frameworkVersion: '2'
+
+plugins:
+  - serverless-bundle
+
+# Create an optimized package for each function
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  stage: dev
+  region: eu-west-1
+
+  # Environment variables that the service can access as process.env
+  environment:
+    TABLE_NAME: example-crud-table
+
+custom:
+  # Stage setting passed through CLI, default: provider.stage
+  deploymentStage: ${opt:stage, self:provider.stage}
+  # Serverless-bundle webpack settings
+  bundle:
+    sourcemaps: true
+    linting: false
+
+functions:
+# Defines HTTP API endpoints that call the handler function
+  # POST /posts
+  create:
+    handler: create.handler
+    events:
+      - http:
+          path: posts
+          method: post
+          cors: true
